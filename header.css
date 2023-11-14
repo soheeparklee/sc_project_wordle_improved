@@ -24,7 +24,7 @@ header{
 
 .wordle_title{
     display: flex;
-    margin: 5px;
+    margin: 5px 5px 5px 60px;
     font-size: 30px;
     font-weight: 900;
     align-items: center;
