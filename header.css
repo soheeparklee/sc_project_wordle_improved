@@ -1,0 +1,32 @@
+header{
+    width: auto;
+    padding: 10px 0;
+}
+
+.header_div{
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    width: auto;
+    border-bottom: 1px solid gray;
+}
+
+.icon_left img {
+    display: flex;
+    width: 25px;
+    height: 25px;
+}
+
+.icon_right img{
+    width: 25px;
+    height: 25px;
+}
+
+.wordle_title{
+    display: flex;
+    margin: 5px;
+    font-size: 30px;
+    font-weight: 900;
+    align-items: center;
+    padding: 0 0 10px 0;
+}
