@@ -3,7 +3,7 @@ let attempts= 0;
 let index= 0;
 let interval
 
-const answer= "PARIS"
+const answer= "CESAR"
 
 function appStart(){
     const showAnimation= () =>{
