@@ -3,13 +3,15 @@ let attempts= 0;
 let index= 0;
 let interval
 
-const answer= "CESAR"
+
+
+
 
 function appStart(){
     const showAnimation= () =>{
         const rowBox= document.querySelector(`.box_row[data-row= "${attempts-1}"]`)
         rowBox.classList.add("animationEffect");
-        console.log(rowBox)
+
 
     }
 
@@ -60,8 +62,13 @@ function appStart(){
             gameLost(); gameOver();
         }
     }
-    const handleEnter = () =>{
+    const handleEnter = async () =>{
         let rightAnswer= 0;
+
+        //get answer from BE
+        const res= await fetch("/answer")
+        const answer= await res.json();
+
         for(let i=0; i<5; i++){
             //워들의 정답과 client의 정답이 일치하는지 한 글자씩 확인해야 함. 
             //client가 입력한 답 한 글자씩 가져오는 방법
@@ -69,15 +76,16 @@ function appStart(){
             const clientAnswer= thisBox.innerText
             //keyboard의 색깔 바꾸기
             const dataKey= thisBox.innerHTML;
-            console.log(dataKey)
             const alphabetBox= document.querySelector(`.alphabet[data-key="${dataKey}"]`)
             
+            
+            
+
             
             if (answer[i] === clientAnswer){
                 thisBox.style.background= "rgb(106,169,100)";
                 alphabetBox.style.background= "rgb(106,169,100)";
                 rightAnswer += 1;
-                console.log(rightAnswer);
             }else if (answer.includes(clientAnswer) ){
                 thisBox.style.background= "rgb(201,180,88)";
                 alphabetBox.style.background= "rgb(201,180,88)";
